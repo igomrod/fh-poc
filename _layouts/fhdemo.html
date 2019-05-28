@@ -103,14 +103,22 @@
         var bitArray2 = sjcl.hash.sha256.hash(t2);
         var digest_sha256_2 = sjcl.codec.hex.fromBits(bitArray2);
         document.getElementById("sha256_hash2").value = digest_sha256_2;
-        document.getElementById("sha256_match").innerHTML = "SHA-256 match: " + (digest_sha256_1 == digest_sha256_2);
+        if(digest_sha256_1 == digest_sha256_2) {
+          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+        } else {
+          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+        }
       
         var ssdeep1 = ssdeep.digest(t1);
         var ssdeep2 = ssdeep.digest(t2);
         document.getElementById("ssdeep_hash1").value = ssdeep1;
         document.getElementById("ssdeep_hash2").value = ssdeep2;
         var similarity = ssdeep.similarity(ssdeep1, ssdeep2);
-        document.getElementById("ssdeep_similarity").innerHTML = "ssdeep similarity = " + Math.round(similarity*10)/10 + "%";
+        if((Math.round(similarity*10)/10) > 80) {
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+        } else {
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+        }
       
         var tlsh1 = new Tlsh();
         var tlsh2 = new Tlsh();
@@ -124,6 +132,13 @@
         document.getElementById("tlsh_diffh").innerHTML = "TLSH diff = " + tlsh_diff;
         var tlsh_simil = Math.round(100.0*Math.exp(-Math.pow(tlsh_diff/40.0, 2))*10.0)/10.0 + "%";
         document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + tlsh_simil;
+
+        if((Math.round(100.0*Math.exp(-Math.pow(tlsh_diff/40.0, 2))*10.0)/10.0) > 80) {
+          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+        } else {
+          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+        }
+
       }
       
       </script>      
@@ -145,7 +160,7 @@
         {{ content }}
 
         <div class="upload-btn-wrapper">
-          <button class="btn">Upload a file</button>
+          <button class="btn">Upload a PDF file</button>
           <input type="file" id="files" name="files[]" />
         </div>
 
