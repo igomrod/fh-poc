@@ -116,10 +116,11 @@
         var similarity = ssdeep.similarity(ssdeep1, ssdeep2);
         console.log(similarity)
 
-        if((Math.round(similarity*10)/10) > 80) {
-          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+        var simRounded = (Math.round(similarity*10)/10)
+        if( simRounded > 80) {
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
         } else {
-          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
         }
       
         var tlsh1 = new Tlsh();
