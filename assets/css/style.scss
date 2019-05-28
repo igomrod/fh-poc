@@ -4,5 +4,5 @@
 @import "{{ site.theme }}";
 
 class .hidden {
-    display:none;
+    display:none!important;
 }
