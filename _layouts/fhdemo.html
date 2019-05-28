@@ -130,6 +130,7 @@
           document.getElementById("ssdeep_similarity").innerHTML = "<span>SSDEEP: </span>" + simRounded + xicon_img_tag;
         }
       
+        console.log("T1: " + t1)
         var tlsh1 = new Tlsh();
         var tlsh2 = new Tlsh();
         tlsh1.update(t1, t1.length+1);
