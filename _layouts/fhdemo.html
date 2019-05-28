@@ -114,6 +114,8 @@
         document.getElementById("ssdeep_hash1").value = ssdeep1;
         document.getElementById("ssdeep_hash2").value = ssdeep2;
         var similarity = ssdeep.similarity(ssdeep1, ssdeep2);
+        console.log(similarity)
+
         if((Math.round(similarity*10)/10) > 80) {
           document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
         } else {
