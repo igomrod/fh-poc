@@ -104,8 +104,8 @@
         var digest_sha256_2 = sjcl.codec.hex.fromBits(bitArray2);
         document.getElementById("sha256_hash2").value = digest_sha256_2;
 
-        tick_img_src = "{{ '/assets/images/tick.png?v=' | append: site.github.build_revision | relative_url }}"
-        xicon_img_src = "{{ '/assets/images/xicon.png?v=' | append: site.github.build_revision | relative_url }}"
+        tick_img_src = "{{ '/assets/images/tick.png' | relative_url }}"
+        xicon_img_src = "{{ '/assets/images/xicon.png' | relative_url }}"
 
         var tick_img_tag = "<img class=\"tick\" src=\"" + tick_img_src + "\">";
         var xicon_img_tag = "<img class=\"xicon\" src=\"" + xicon_img_src + "\">";
