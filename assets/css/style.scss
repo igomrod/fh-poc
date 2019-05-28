@@ -7,17 +7,26 @@
     display:none!important;
 }
 
-.upload_button {
-    display: block;
-    float: right;
-    width: 90px;
-    height:70px;
-    text-indent: -5000px;
+.upload-btn-wrapper {
+    position: relative;
     overflow: hidden;
-    background: url(../images/sprite_download.png) no-repeat bottom right;
-    margin-left: 10px;
+    display: inline-block;
   }
-
-  .upload_button:hover {
-    background: url(../images/sprite_download.png) no-repeat top right;
+  
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
   }
