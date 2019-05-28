@@ -104,9 +104,9 @@
         var digest_sha256_2 = sjcl.codec.hex.fromBits(bitArray2);
         document.getElementById("sha256_hash2").value = digest_sha256_2;
         if(digest_sha256_1 == digest_sha256_2) {
-          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/tick.png' | relative_url}}\">" 
         } else {
-          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+          document.getElementById("sha256_match").innerHTML = "SHA-256 match: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png' | relative_url}}\">" 
         }
       
         var ssdeep1 = ssdeep.digest(t1);
@@ -118,9 +118,9 @@
 
         var simRounded = (Math.round(similarity*10)/10)
         if( simRounded > 80) {
-          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/tick.png' | relative_url}}\">" 
         } else {
-          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+          document.getElementById("ssdeep_similarity").innerHTML = "SSDEEP: simRounded <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png' | relative_url}}\">" 
         }
       
         var tlsh1 = new Tlsh();
@@ -137,9 +137,9 @@
         document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + tlsh_simil;
 
         if((Math.round(100.0*Math.exp(-Math.pow(tlsh_diff/40.0, 2))*10.0)/10.0) > 80) {
-          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/tick.png\"}}>" 
+          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/tick.png' | relative_url}}\">" 
         } else {
-          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png\"}}>" 
+          document.getElementById("tlsh_simil").innerHTML = "TLSH: <img class=\"tick\" src=\"{{ '/assets/images/x-icon.png' | relative_url}}\">" 
         }
 
       }
