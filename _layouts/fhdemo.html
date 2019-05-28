@@ -121,6 +121,10 @@
         document.getElementById("ssdeep_hash1").value = ssdeep1;
         document.getElementById("ssdeep_hash2").value = ssdeep2;
         var similarity = ssdeep.similarity(ssdeep1, ssdeep2);
+        
+        console.log(ssdeep1)
+        console.log(ssdeep2)
+        
         console.log(similarity)
 
         var simRounded = (Math.round(similarity*10)/10)
