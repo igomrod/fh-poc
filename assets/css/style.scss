@@ -45,13 +45,14 @@
     min-width: 20px;
 }
 
-.footer_wrap {
+#footer_wrap {
     background-color: white
 }
 
-.footer_wrap img{
+#footer_wrap img{
     border: none;
     padding: 0;
+    max-width: 100%
 }
 
 header .inner img{
@@ -60,5 +61,5 @@ header .inner img{
 }
 
 #header_wrap {
-    background: none;
+    background-color: #f2f2f2;
 }
