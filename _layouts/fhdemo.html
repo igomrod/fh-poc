@@ -111,9 +111,9 @@
         var xicon_img_tag = "<img class=\"x-icon\" src=\"" + xicon_img_src + "\">";
 
         if(digest_sha256_1 == digest_sha256_2) {
-          document.getElementById("sha256_match").innerHTML = "<span>SHA-256 match: </span>" + tick_img_tag;
+          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hash (SHA-256) match: </span>" + tick_img_tag;
         } else {
-          document.getElementById("sha256_match").innerHTML = "<span>SHA-256 match: </span>" + xicon_img_tag;
+          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hash (SHA-256) match: </span>" + xicon_img_tag;
         }
       
         var ssdeep1 = ssdeep.digest(t1);
@@ -127,11 +127,13 @@
         
         console.log(similarity)
 
+        document.getElementById("filename_match").innerHTML = "<span>FILENAME: </span>" + xicon_img_tag;
+
         var simRounded = (Math.round(similarity*10)/10)
         if( simRounded > 80) {
-          document.getElementById("ssdeep_similarity").innerHTML = "<span>SSDEEP: </span>" + simRounded + tick_img_tag;
+          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy Hash (ssdeep): </span>" + simRounded + tick_img_tag;
         } else {
-          document.getElementById("ssdeep_similarity").innerHTML = "<span>SSDEEP: </span>" + simRounded + xicon_img_tag;
+          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy Hash (ssdeep): </span>" + simRounded + xicon_img_tag;
         }
       
         console.log("T1: " + t1)
@@ -150,9 +152,9 @@
         document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + tlsh_simil;
 
         if((Math.round(100.0*Math.exp(-Math.pow(tlsh_diff/40.0, 2))*10.0)/10.0) > 80) {
-          document.getElementById("tlsh_simil").innerHTML = "<span>TLSH: </span>" + tick_img_tag;
+          document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + tick_img_tag;
         } else {
-          document.getElementById("tlsh_simil").innerHTML = "<span>TLSH: </span>" + xicon_img_tag;
+          document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + xicon_img_tag;
         }
 
       }
@@ -243,6 +245,7 @@
           <span class="hidden">TLSH ignore len <input type="checkbox" id="tlsh_iglen"></span>
           <br><hr><br>
           <b>
+          <span id="filename_match"></span>                  
           <span id="sha256_match"></span>
           <br><br>
           <span id="ssdeep_similarity"></span>
@@ -252,9 +255,6 @@
           <span id="tlsh_simil"></span>
           </b>
           <br><br>
-          <div class="upload-btn-wrapper">
-            <button class="btn" onclick="fun_hash()">RECALCULATE</button>      
-          </div>
         </section>
     </div>
 
