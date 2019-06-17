@@ -181,7 +181,8 @@
 
         <output id="list"></output>
         
-        <table class="hidden">
+        <div id="results">
+          <table class="hidden">
           <tr>
           <td>
           <b>User PDF</b>
@@ -233,6 +234,10 @@
           </td>
           </tr>
           </table>
+        </div>
+        <div id="basedocument">
+          <img src="{{ '/assets/images/masterpdfthumbnail.png' | relative_url }}">
+        </div>
           <br>
           <span class="hidden">TLSH ignore len <input type="checkbox" id="tlsh_iglen"></span>
           <br><hr><br>
