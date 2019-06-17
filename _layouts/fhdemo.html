@@ -127,7 +127,7 @@
         
         console.log(similarity)
 
-        document.getElementById("filename_match").innerHTML = "<span>FILENAME: </span>" + xicon_img_tag;
+        document.getElementById("filename_match").innerHTML = "<span>Filename: </span>" + xicon_img_tag;
 
         var simRounded = (Math.round(similarity*10)/10)
         if( simRounded > 80) {
@@ -245,14 +245,14 @@
         </div>
           <br>
           <span class="hidden">TLSH ignore len <input type="checkbox" id="tlsh_iglen"></span>
-          <br><hr><br>
-          <b>
+           <b>
           <span id="filename_match"></span> 
           <br><br>                 
           <span id="sha256_match"></span>
           <br><br>
           <span id="ssdeep_similarity"></span>
           <span style="display:none;" id="tlsh_diffh"></span>
+          <br><br>
           <span id="tlsh_simil"></span>
           </b>
           <br><br>
