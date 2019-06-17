@@ -62,12 +62,16 @@
 
    
 
-header .inner img{
+header img {
     padding: 0;
     border: 0;
     order: 1px solid #ebebeb;
     box-shadow: 0 0 5px #ebebeb;
     -webkit-box-shadow: none; 
     border: none;
+}
+
+#header_wrap {
+    background: #f2f2f2; 
 }
 
