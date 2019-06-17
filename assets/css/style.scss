@@ -81,3 +81,19 @@ header img {
     color: #373737;
     font-size: 13px;
 }
+
+#basedocument img {
+    box-shadow: none;
+    -webkit-box-shadow: none; 
+    border: none;
+}
+
+#results {
+    width: 50%;
+    display:inline-block;  
+}
+
+#basedocument {
+    width: 50%;
+    display:inline-block;
+}
