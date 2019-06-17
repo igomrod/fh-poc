@@ -45,10 +45,6 @@
     min-width: 20px;
 }
 
-#footer_wrap {
-    background-color: white;
-    color: #373737;
-}
 
 #footer_wrap img{
     border: none;
@@ -63,12 +59,17 @@
     -webkit-box-shadow: none;
 }
 
+#footer_wrap {
+￼    background-color: white;
+￼    color: #373737;
+}
+   
 
 header .inner img{
     padding: 0;
     border: 0;
+    order: 1px solid #ebebeb;
+    box-shadow: 0 0 5px #ebebeb;
+    -webkit-box-shadow: 0 0 5px #ebebeb; 
 }
 
-#header_wrap {
-    background-color: #f2f2f2;
-}
