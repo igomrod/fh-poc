@@ -60,7 +60,7 @@ function fun_hash(e) {
     document.getElementById("tlsh_diffh").innerHTML = "TLSH diff = " + g;
     var m = Math.round(100 * Math.exp(-Math.pow(g / 40, 2)) * 10) / 10 + "%";
     document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + m, Math.round(100 * Math.exp(-Math.pow(g / 40, 2)) * 10) / 10 > 80 ? document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + s : document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + i
-    if (document.getElementById("filename").innerHTML == "Programa_aniversario_tegra_maestro.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + s}
+    if (document.getElementById("filename").innerHTML == "programa_aniversario_tegra_maestro.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + s}
     else {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + i}
     
 
