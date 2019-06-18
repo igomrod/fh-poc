@@ -3,8 +3,9 @@ layout: fhdemo
 ---
 ## Fuzzy Hashing Demo
 
-Simple web to show fuzzy hashing capabilities.
+Sample web to show the capabilities of fuzzy hashing algorithms.
+
 
 ### Upload the document
 
-Upload a PDF document and it will be compared to master document bellow.
+Upload a PDF document and it will be compared with the following PDF document.
