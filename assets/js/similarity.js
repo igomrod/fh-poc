@@ -9,7 +9,7 @@ function handleFileSelect(e) {
         i = '<img class="x-icon" src="' + xicon_img_src + '">';
     for (var n, a = e.target.files, t = new Array, o = [], s = 0; n = a[s]; s++) o.push("<li><strong>", escape(n.name), "</strong> (", n.type || "n/a", ") - ", n.size, " bytes, last modified: ", n.lastModifiedDate.toLocaleDateString(), "</li>"), t[s] = new FileReader, t[s].onload = function(e) {
         var n = this.result;
-                if (n.name == "Programa_nacimiento_tegra.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + i}
+         if (n.name === "Programa_nacimiento_tegra.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + i}
         else {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + s}
         pdfjsLib.getDocument(n).then(function(e) {
             for (var n, a = [], t = 0; t < e._pdfInfo.numPages; t++) n = t + 1, a.push(getPageText(n, e));
