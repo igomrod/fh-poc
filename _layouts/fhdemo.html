@@ -113,9 +113,9 @@ function fun_hash(t1u) {
         var xicon_img_tag = "<img class=\"x-icon\" src=\"" + xicon_img_src + "\">";
 
         if(digest_sha256_1 == digest_sha256_2) {
-          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hash (SHA-256) match: </span>" + tick_img_tag;
+          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hashes (SHA-256): </span>" + tick_img_tag;
         } else {
-          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hash (SHA-256) match: </span>" + xicon_img_tag;
+          document.getElementById("sha256_match").innerHTML = "<span>Cryptographic hashes (SHA-256): </span>" + xicon_img_tag;
         }
       
         var ssdeep1 = ssdeep.digest(t1);
@@ -129,13 +129,13 @@ function fun_hash(t1u) {
         
         console.log(similarity)
 
-        document.getElementById("filename_match").innerHTML = "<span>Filename: </span>" + xicon_img_tag;
+        document.getElementById("filename_match").innerHTML = "<span>Names of the documents: </span>" + xicon_img_tag;
 
         var simRounded = (Math.round(similarity*10)/10)
         if( simRounded > 80) {
-          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy Hash (ssdeep): </span>" + simRounded + tick_img_tag;
+          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy hashing (ssdeep): </span>" + simRounded + tick_img_tag;
         } else {
-          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy Hash (ssdeep): </span>" + simRounded + xicon_img_tag;
+          document.getElementById("ssdeep_similarity").innerHTML = "<span>Fuzzy hashing (ssdeep):  </span>" + simRounded + xicon_img_tag;
         }
       
         console.log("T1: " + t1)
@@ -178,22 +178,22 @@ function fun_hash(t1u) {
       <section id="main_content" class="inner">
         {{ content }}
 
-        <center>
+        <output id="list"></output>
+        <div id="results_wrapper">
+        <div id="basedocument">
+            <a href="{{ '/assets/pdf/Programa_aniversario_tegra_maestro.pdf' | relative_url }}"><img src="{{ '/assets/images/masterpdfthumbnail.png' | relative_url }}"></a>
+        </div>
+        
+	<center>
           <div class="upload-btn-wrapper">
             <button class="btn">Upload a PDF file</button>
             <input type="file" id="files" name="files[]" />
           </div>
         </center>
-
-        <output id="list"></output>
-        <div id="results_wrapper">
-        <div id="basedocument">
-            <h4>Master PDF Document</h4>
-            <a href="{{ '/assets/pdf/Programa_aniversario_tegra_maestro.pdf' | relative_url }}"><img src="{{ '/assets/images/masterpdfthumbnail.png' | relative_url }}"></a>
-        </div>
+		
         <div id="results">
-          <h4>Document Comparision Results</h4>
-          <table class="hidden">
+	  <h3>Matching results</h3>
+	  <table class="hidden">
           <tr>
           <td>
           <b>User PDF</b>
