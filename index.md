@@ -7,4 +7,4 @@ Simple web to show fuzzy hashing capabilities.
 
 ### Upload the document
 
-Upload a PDF document and it will be comapred to master document bellow
+Upload a PDF document and it will be compared to master document bellow.
