@@ -3,7 +3,7 @@ function funfun() {
     window.File && window.FileReader && window.FileList && window.Blob || alert("The File APIs are not fully supported in this browser"), document.getElementById("files").addEventListener("change", handleFileSelect, !1), document.getElementById("text2").value = decodeURI(t2)
 }
 var t1, t2 = encodeURI(" Aniversario TEGRA Cybersecurity Center Fecha Miércoles 19 de j unio de 2019 Localización Santiago de Compostela - Casa Grande do Pozo ( Rúa do Vilar, 19, Santiago de Compostela. 15705, A Coruña ) https://goo.gl/maps/Cqjz8bAHvoXP6HcK7 Programa 10 : 00 h : Recepción , registro y café Durante la recepción estar án disponibles unos stands demostrativos con tecnologías innovadoras . 10:30 h : Apertura de la jornada Luis Pérez Freire Director General de Gradiant P edro Pablo Pérez Garcia Vicepresidente de Seguridad de Telefónica y CEO de ElevenPaths 1 1: 00 h : Aniversario de TEGRA: Logros, hitos y futuro Juan Elosua Tomé – Director TEGRA – ElevenPaths Juan González Martínez – Director TEGR A – Gradiant 11 :15 h : Mesa redonda “ Fugas de información: Impacto, control y mitigación ” Moderado r : Fernando Jiménez Míguez – Gerente de Gradiant P onentes : Roberto Baratta Martínez Director de Prevención Pérdidas - Cont inuida d de Negoci o - Seguridad – ABANCA Carlos López Blanco Head of Digital Risk Office – Hijos de Rivera SAU Fernando Suarez Lorenzo Director del Área de Transparencia y Gobierno Abierto – Deputación de Ourense David González González Responsable de seguridad de información – Grupo COREN 1 2 : 15 h : “¿ Innovación para ayudar controlar y tener visibilidad de la información corporativa?” Jose Cascallana Arroyo – Equipo TEGRA Lilian A dkinson Orellana /D iego Pérez Vieites – Equipo TEGRA Roberto Anta Rodríguez – Equipo TEGRA Rafael Mart í nez Álvarez /Iván Gómez Rodr í guez – Equipo TEGRA 1 2 : 45 h : Keynote - Clausura Ignacio González Ubierna Subdirector de tecnologías de ciberseguridad – INCIBE 1 3: 15 h – 14:00h Cocktail Durante el cocktail estarán disponibles unos stands demostrativos con tecnologías innovadora s . ".replace(/\s\s+/g, " "));
-
+var tick_img_src = "/fh-poc/assets/images/tick.png", xicon_img_src = "/fh-poc//assets/images/x-icon.png";
 function handleFileSelect(e) {
     var s = '<img class="tick" src="' + tick_img_src + '">',
         i = '<img class="x-icon" src="' + xicon_img_src + '">';
@@ -44,7 +44,7 @@ function fun_hash(e) {
     document.getElementById("sha256_hash1").value = a;
     var t = sjcl.hash.sha256.hash(t2),
         o = sjcl.codec.hex.fromBits(t);
-    document.getElementById("sha256_hash2").value = o, tick_img_src = "/fh-poc/assets/images/tick.png", xicon_img_src = "/fh-poc//assets/images/x-icon.png";
+    document.getElementById("sha256_hash2").value = o;
     var s = '<img class="tick" src="' + tick_img_src + '">',
         i = '<img class="x-icon" src="' + xicon_img_src + '">';
     document.getElementById("sha256_match").innerHTML = a == o ? "<span>Cryptographic hashes (SHA-256): </span>" + s : "<span>Cryptographic hashes (SHA-256): </span>" + i;
