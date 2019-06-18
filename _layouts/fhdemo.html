@@ -96,7 +96,9 @@
     }
 
       
-      function fun_hash() {
+function fun_hash(t1u) {
+      	t1 = encodeURI(t1u.replace(/\s\s+/g, ' '));
+	      document.getElementById("text1").value = decodeURI(t1);
         var bitArray1 = sjcl.hash.sha256.hash(t1);
         var digest_sha256_1 = sjcl.codec.hex.fromBits(bitArray1);
         document.getElementById("sha256_hash1").value = digest_sha256_1;
