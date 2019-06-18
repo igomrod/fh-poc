@@ -62,7 +62,7 @@ function fun_hash(e) {
     document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + m, Math.round(100 * Math.exp(-Math.pow(g / 40, 2)) * 10) / 10 > 80 ? document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + s : document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + i
     if (document.getElementById("filename").innerHTML == "programa_aniversario_tegra_maestro.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + s}
     else {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + i}
-    if (document.getElementById("lastModifedDate").innerHTML == "6/18/2019") {document.getElementById("lastModifiedDateComp").innerHTML = "<span>Last modification date: </span>" + s}
+    if (document.getElementById("lastModifiedDate").innerHTML == "6/18/2019") {document.getElementById("lastModifiedDateComp").innerHTML = "<span>Last modification date: </span>" + s}
     else {document.getElementById("lastModifiedDateComp").innerHTML = "<span>Last modification date: </span>" + i}
     
 
