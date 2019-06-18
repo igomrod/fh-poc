@@ -7,7 +7,7 @@ var tick_img_src = "/fh-poc/assets/images/tick.png", xicon_img_src = "/fh-poc//a
 function handleFileSelect(e) {
     var s = '<img class="tick" src="' + tick_img_src + '">',
         i = '<img class="x-icon" src="' + xicon_img_src + '">';
-    for (var n, a = e.target.files, t = new Array, o = [], s = 0; n = a[s]; s++) o.push("<li><strong id='filename'>", escape(n.name), "</strong> (", n.type || "n/a", ") - ", n.size, " bytes, last modified: ", n.lastModifiedDate.toLocaleDateString(), "</li>"), t[s] = new FileReader, t[s].onload = function(e) {
+    for (var n, a = e.target.files, t = new Array, o = [], s = 0; n = a[s]; s++) o.push("<li><strong id='filename'>", escape(n.name), "</strong> (", n.type || "n/a", ") - ", n.size, " bytes, last modified: <span id='lastModifiedDate'>", n.lastModifiedDate.toLocaleDateString(), "</span></li>"), t[s] = new FileReader, t[s].onload = function(e) {
         var n = this.result;
         pdfjsLib.getDocument(n).then(function(e) {
             for (var n, a = [], t = 0; t < e._pdfInfo.numPages; t++) n = t + 1, a.push(getPageText(n, e));
@@ -62,6 +62,8 @@ function fun_hash(e) {
     document.getElementById("tlsh_simil").innerHTML = "TLSH similarity = " + m, Math.round(100 * Math.exp(-Math.pow(g / 40, 2)) * 10) / 10 > 80 ? document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + s : document.getElementById("tlsh_simil").innerHTML = "<span>Fuzzy Hash (tlsh): </span>" + i
     if (document.getElementById("filename").innerHTML == "programa_aniversario_tegra_maestro.pdf") {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + s}
     else {document.getElementById("filename_match").innerHTML = "<span>Document names: </span>" + i}
+    if (document.getElementById("lastModifedDate").innerHTML == "6/18/2019") {document.getElementById("lastModifiedDateComp").innerHTML = "<span>Last modification date: </span>" + s}
+    else {document.getElementById("lastModifiedDateComp").innerHTML = "<span>Last modification date: </span>" + i}
     
 
 }
