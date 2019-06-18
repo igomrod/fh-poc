@@ -5,7 +5,4 @@ layout: fhdemo
 
 Sample web to show the capabilities of fuzzy hashing algorithms.
 
-
-### Upload the document
-
 Upload a PDF document and it will be compared with the following PDF document.
